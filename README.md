@@ -26,12 +26,6 @@ A feature-rich Android app for tracking meals and medications with smart reminde
 
 ---
 
-## 📸 Screenshots
-
-> <img width="1080" height="2400" alt="Screenshot 9" src="https://github.com/user-attachments/assets/14b3277a-b097-41aa-b88b-53631921de9f" />
-
----
-
 ## 🛠️ Tech Stack
 
 | Layer | Technology |
