@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- ── Light theme (generated via Material Theme Builder, seed: #2E7D32 green) ── -->
+    <color name="md_theme_primary">#2E7D32</color>
+    <color name="md_theme_onPrimary">#FFFFFF</color>
+    <color name="md_theme_primaryContainer">#A5D6A7</color>
+    <color name="md_theme_onPrimaryContainer">#002106</color>
+
+    <color name="md_theme_secondary">#52796F</color>
+    <color name="md_theme_onSecondary">#FFFFFF</color>
+    <color name="md_theme_secondaryContainer">#CAE8DF</color>
+    <color name="md_theme_onSecondaryContainer">#0D2419</color>
+
+    <color name="md_theme_tertiary">#1565C0</color>
+    <color name="md_theme_onTertiary">#FFFFFF</color>
+    <color name="md_theme_tertiaryContainer">#BBDEFB</color>
+    <color name="md_theme_onTertiaryContainer">#001B3D</color>
+
+    <color name="md_theme_error">#B00020</color>
+    <color name="md_theme_onError">#FFFFFF</color>
+    <color name="md_theme_errorContainer">#FDECEA</color>
+    <color name="md_theme_onErrorContainer">#410002</color>
+
+    <color name="md_theme_background">#F8FBF6</color>
+    <color name="md_theme_onBackground">#1A1C18</color>
+
+    <color name="md_theme_surface">#F8FBF6</color>
+    <color name="md_theme_onSurface">#1A1C18</color>
+    <color name="md_theme_surfaceVariant">#DDE5DA</color>
+    <color name="md_theme_onSurfaceVariant">#414941</color>
+
+    <color name="md_theme_outline">#717970</color>
+    <color name="md_theme_outlineVariant">#C1C9BF</color>
+
+    <!-- ── Dark theme ── -->
+    <color name="md_theme_dark_primary">#80C783</color>
+    <color name="md_theme_dark_onPrimary">#003910</color>
+    <color name="md_theme_dark_primaryContainer">#1B5E20</color>
+    <color name="md_theme_dark_onPrimaryContainer">#A5D6A7</color>
+
+    <color name="md_theme_dark_secondary">#8ECFC5</color>
+    <color name="md_theme_dark_onSecondary">#1F3D36</color>
+    <color name="md_theme_dark_secondaryContainer">#3A5F55</color>
+    <color name="md_theme_dark_onSecondaryContainer">#CAE8DF</color>
+
+    <color name="md_theme_dark_tertiary">#8AB4F8</color>
+    <color name="md_theme_dark_onTertiary">#002E69</color>
+    <color name="md_theme_dark_tertiaryContainer">#0D47A1</color>
+    <color name="md_theme_dark_onTertiaryContainer">#BBDEFB</color>
+
+    <color name="md_theme_dark_error">#CF6679</color>
+    <color name="md_theme_dark_onError">#680020</color>
+    <color name="md_theme_dark_errorContainer">#930030</color>
+    <color name="md_theme_dark_onErrorContainer">#FFB4AB</color>
+
+    <color name="md_theme_dark_background">#1A1C18</color>
+    <color name="md_theme_dark_onBackground">#E2E3DD</color>
+
+    <color name="md_theme_dark_surface">#1A1C18</color>
+    <color name="md_theme_dark_onSurface">#E2E3DD</color>
+    <color name="md_theme_dark_surfaceVariant">#414941</color>
+    <color name="md_theme_dark_onSurfaceVariant">#C1C9BF</color>
+
+    <color name="md_theme_dark_outline">#8B938A</color>
+    <color name="md_theme_dark_outlineVariant">#414941</color>
+
+    <!-- ── Semantic / custom ── -->
+    <color name="food_color">#FF8F00</color>        <!-- Amber for food -->
+    <color name="medicine_color">#1565C0</color>    <!-- Blue for medicine -->
+    <color name="streak_green">#2E7D32</color>
+    <color name="partial_orange">#F57C00</color>
+    <color name="missed_red">#C62828</color>
+    <color name="pending_grey">#757575</color>
+
+    <!-- Widget background -->
+    <color name="widget_background">#CC1A1C18</color>
+
+</resources>

@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="10dp"
+    android:id="@+id/card_entry"
+    app:cardCornerRadius="16dp"
+    app:cardElevation="2dp"
+    app:strokeWidth="2dp"
+    app:strokeColor="?attr/colorOutlineVariant">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="14dp">
+
+        <!-- Category Icon -->
+        <ImageView
+            android:id="@+id/iv_category_icon"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:padding="4dp"
+            android:background="@drawable/bg_icon_circle"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:tint="?attr/colorPrimary"
+            android:contentDescription="Category icon" />
+
+        <!-- Status Badge (overlay top-right of icon) -->
+        <ImageView
+            android:id="@+id/iv_status_badge"
+            android:layout_width="18dp"
+            android:layout_height="18dp"
+            android:visibility="gone"
+            app:layout_constraintEnd_toEndOf="@id/iv_category_icon"
+            app:layout_constraintTop_toTopOf="@id/iv_category_icon" />
+
+        <!-- Title -->
+        <TextView
+            android:id="@+id/tv_title"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:layout_marginEnd="8dp"
+            android:textAppearance="?attr/textAppearanceTitleSmall"
+            app:layout_constraintEnd_toStartOf="@id/tv_time"
+            app:layout_constraintStart_toEndOf="@id/iv_category_icon"
+            app:layout_constraintTop_toTopOf="@id/iv_category_icon" />
+
+        <!-- Time -->
+        <TextView
+            android:id="@+id/tv_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?attr/textAppearanceLabelMedium"
+            android:textColor="?attr/colorPrimary"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/tv_title" />
+
+        <!-- Notes -->
+        <TextView
+            android:id="@+id/tv_notes"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:layout_marginTop="2dp"
+            android:maxLines="2"
+            android:ellipsize="end"
+            android:textAppearance="?attr/textAppearanceBodySmall"
+            android:alpha="0.7"
+            android:visibility="gone"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/iv_category_icon"
+            app:layout_constraintTop_toBottomOf="@id/tv_title" />
+
+        <!-- Category chip -->
+        <com.google.android.material.chip.Chip
+            android:id="@+id/chip_category"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:layout_marginTop="6dp"
+            style="@style/Widget.Material3.Chip.Assist"
+            app:layout_constraintStart_toEndOf="@id/iv_category_icon"
+            app:layout_constraintTop_toBottomOf="@id/tv_notes" />
+
+        <!-- Action Buttons -->
+        <LinearLayout
+            android:id="@+id/layout_actions"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal"
+            android:gravity="end"
+            app:layout_constraintTop_toBottomOf="@id/chip_category"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent">
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_alarm"
+                style="@style/Widget.Material3.Button.IconButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:icon="@drawable/ic_alarm"
+                android:contentDescription="Set alarm" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_edit"
+                style="@style/Widget.Material3.Button.IconButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:icon="@drawable/ic_edit"
+                android:contentDescription="Edit entry" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_delete"
+                style="@style/Widget.Material3.Button.IconButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:icon="@drawable/ic_delete"
+                app:iconTint="?attr/colorError"
+                android:contentDescription="Delete entry" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_complete"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                style="@style/Widget.Material3.Button.TonalButton"
+                android:text="Mark Eaten" />
+
+        </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</com.google.android.material.card.MaterialCardView>

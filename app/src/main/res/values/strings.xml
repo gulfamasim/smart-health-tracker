@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Smart Health Tracker</string>
+    <string name="widget_name">Health Tracker Widget</string>
+
+    <!-- Navigation labels -->
+    <string name="nav_dashboard">Today</string>
+    <string name="nav_calendar">Calendar</string>
+    <string name="nav_reminders">Reminders</string>
+    <string name="nav_statistics">Stats</string>
+    <string name="nav_settings">Settings</string>
+
+    <!-- Entry categories -->
+    <string name="category_food">Food</string>
+    <string name="category_medicine">Medicine</string>
+
+    <!-- Status -->
+    <string name="status_pending">Pending</string>
+    <string name="status_completed">Completed</string>
+    <string name="status_missed">Missed</string>
+    <string name="status_snoozed">Snoozed</string>
+
+    <!-- Actions -->
+    <string name="action_mark_eaten">Mark Eaten</string>
+    <string name="action_mark_taken">Mark Taken</string>
+    <string name="action_snooze">Snooze 10m</string>
+    <string name="action_dismiss">Dismiss</string>
+
+    <!-- Notification -->
+    <string name="notif_channel_alarm_name">Health Reminders</string>
+    <string name="notif_channel_alarm_desc">Meal and medication reminders</string>
+    <string name="notif_channel_progress_name">Daily Progress</string>
+    <string name="notif_channel_info_name">Health Insights</string>
+</resources>

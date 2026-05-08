@@ -1,0 +1,13 @@
+# Android generated
+.gradle/
+.idea/
+build/
+local.properties
+*.iml
+captures/
+.externalNativeBuild/
+.cxx/
+
+# OS junk
+.DS_Store
+Thumbs.db

@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/dashboardFragment">
+
+    <!-- Dashboard -->
+    <fragment
+        android:id="@+id/dashboardFragment"
+        android:name="com.smarthealthtracker.ui.dashboard.DashboardFragment"
+        android:label="Today"
+        tools:layout="@layout/fragment_dashboard">
+        <action
+            android:id="@+id/action_dashboard_to_add_edit_entry"
+            app:destination="@id/addEditEntryFragment"
+            app:enterAnim="@anim/slide_in_up"
+            app:popExitAnim="@anim/slide_out_down" />
+    </fragment>
+
+    <!-- Add / Edit Entry -->
+    <fragment
+        android:id="@+id/addEditEntryFragment"
+        android:name="com.smarthealthtracker.ui.entries.AddEditEntryFragment"
+        android:label="Entry"
+        tools:layout="@layout/fragment_add_edit_entry">
+        <argument
+            android:name="entryId"
+            app:argType="long"
+            android:defaultValue="-1L" />
+    </fragment>
+
+    <!-- Calendar -->
+    <fragment
+        android:id="@+id/calendarFragment"
+        android:name="com.smarthealthtracker.ui.calendar.CalendarFragment"
+        android:label="Calendar"
+        tools:layout="@layout/fragment_calendar" />
+
+    <!-- Reminders -->
+    <fragment
+        android:id="@+id/remindersFragment"
+        android:name="com.smarthealthtracker.ui.reminders.RemindersFragment"
+        android:label="Reminders"
+        tools:layout="@layout/fragment_reminders">
+        <action
+            android:id="@+id/action_reminders_to_add_edit_schedule"
+            app:destination="@id/addEditScheduleFragment"
+            app:enterAnim="@anim/slide_in_up"
+            app:popExitAnim="@anim/slide_out_down" />
+    </fragment>
+
+    <!-- Add / Edit Schedule -->
+    <fragment
+        android:id="@+id/addEditScheduleFragment"
+        android:name="com.smarthealthtracker.ui.reminders.AddEditScheduleFragment"
+        android:label="Schedule"
+        tools:layout="@layout/fragment_add_edit_schedule">
+        <argument
+            android:name="scheduleId"
+            app:argType="long"
+            android:defaultValue="-1L" />
+    </fragment>
+
+    <!-- Statistics -->
+    <fragment
+        android:id="@+id/statisticsFragment"
+        android:name="com.smarthealthtracker.ui.statistics.StatisticsFragment"
+        android:label="Statistics"
+        tools:layout="@layout/fragment_statistics" />
+
+    <!-- Settings -->
+    <fragment
+        android:id="@+id/settingsFragment"
+        android:name="com.smarthealthtracker.ui.settings.SettingsFragment"
+        android:label="Settings"
+        tools:layout="@layout/fragment_settings" />
+
+</navigation>

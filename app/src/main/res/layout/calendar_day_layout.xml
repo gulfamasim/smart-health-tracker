@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="48dp"
+    android:padding="2dp">
+
+    <!-- Circular background for selected/today state -->
+    <View
+        android:id="@+id/view_bg"
+        android:layout_width="36dp"
+        android:layout_height="36dp"
+        android:layout_gravity="center"
+        android:background="@drawable/bg_selected_day"
+        android:visibility="gone" />
+
+    <!-- Day number - always visible -->
+    <TextView
+        android:id="@+id/tv_day_number"
+        android:layout_width="36dp"
+        android:layout_height="36dp"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:textSize="14sp"
+        android:textColor="#CCFFFFFF"
+        android:textStyle="normal" />
+
+    <!-- Completion dot at bottom -->
+    <ImageView
+        android:id="@+id/dot_completion"
+        android:layout_width="6dp"
+        android:layout_height="6dp"
+        android:layout_gravity="bottom|center_horizontal"
+        android:layout_marginBottom="2dp"
+        android:src="@drawable/ic_dot"
+        android:visibility="invisible"
+        android:contentDescription="Completion dot" />
+
+    <!-- Invisible LinearLayout kept for binding compatibility -->
+    <LinearLayout
+        android:id="@+id/layout_day"
+        android:layout_width="36dp"
+        android:layout_height="36dp"
+        android:layout_gravity="center"
+        android:orientation="vertical"
+        android:visibility="invisible" />
+
+</FrameLayout>

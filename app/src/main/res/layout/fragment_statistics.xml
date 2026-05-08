@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="?attr/colorSurface">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp"
+        android:paddingBottom="88dp">
+
+        <!-- Streak section -->
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            app:cardCornerRadius="20dp"
+            app:cardBackgroundColor="?attr/colorSecondaryContainer">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="20dp">
+
+                <TextView
+                    android:id="@+id/tv_streak_label"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?attr/textAppearanceBodyMedium"
+                    android:textColor="?attr/colorOnSecondaryContainer"
+                    android:alpha="0.8"
+                    android:text="Keep going!" />
+
+                <TextView
+                    android:id="@+id/tv_current_streak"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?attr/textAppearanceDisplaySmall"
+                    android:textColor="?attr/colorOnSecondaryContainer"
+                    android:text="0 🔥" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Current Streak"
+                    android:textAppearance="?attr/textAppearanceLabelLarge"
+                    android:textColor="?attr/colorOnSecondaryContainer"
+                    android:alpha="0.7" />
+
+            </LinearLayout>
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- Stats Grid (2x2) -->
+        <androidx.gridlayout.widget.GridLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            app:columnCount="2"
+            app:rowCount="2">
+
+            <!-- Max Streak -->
+            <com.google.android.material.card.MaterialCardView
+                app:layout_columnWeight="1"
+                app:layout_rowWeight="1"
+                android:layout_margin="4dp"
+                app:cardCornerRadius="16dp">
+                <LinearLayout android:layout_width="match_parent"
+                    android:layout_height="wrap_content" android:orientation="vertical"
+                    android:padding="16dp">
+                    <TextView android:id="@+id/tv_max_streak"
+                        android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:textAppearance="?attr/textAppearanceHeadlineSmall"
+                        android:text="0" />
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:text="Best Streak 🏆"
+                        android:textAppearance="?attr/textAppearanceLabelMedium" android:alpha="0.7" />
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Weekly Rate -->
+            <com.google.android.material.card.MaterialCardView
+                app:layout_columnWeight="1"
+                app:layout_rowWeight="1"
+                android:layout_margin="4dp"
+                app:cardCornerRadius="16dp">
+                <LinearLayout android:layout_width="match_parent"
+                    android:layout_height="wrap_content" android:orientation="vertical"
+                    android:padding="16dp">
+                    <TextView android:id="@+id/tv_weekly_rate"
+                        android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:textAppearance="?attr/textAppearanceHeadlineSmall"
+                        android:text="0%" />
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:text="This Week 📊"
+                        android:textAppearance="?attr/textAppearanceLabelMedium" android:alpha="0.7" />
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Total Completed -->
+            <com.google.android.material.card.MaterialCardView
+                app:layout_columnWeight="1"
+                app:layout_rowWeight="1"
+                android:layout_margin="4dp"
+                app:cardCornerRadius="16dp">
+                <LinearLayout android:layout_width="match_parent"
+                    android:layout_height="wrap_content" android:orientation="vertical"
+                    android:padding="16dp">
+                    <TextView android:id="@+id/tv_total_completed"
+                        android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:textAppearance="?attr/textAppearanceHeadlineSmall"
+                        android:textColor="@color/streak_green"
+                        android:text="0" />
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:text="Completed ✓"
+                        android:textAppearance="?attr/textAppearanceLabelMedium" android:alpha="0.7" />
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Total Missed -->
+            <com.google.android.material.card.MaterialCardView
+                app:layout_columnWeight="1"
+                app:layout_rowWeight="1"
+                android:layout_margin="4dp"
+                app:cardCornerRadius="16dp">
+                <LinearLayout android:layout_width="match_parent"
+                    android:layout_height="wrap_content" android:orientation="vertical"
+                    android:padding="16dp">
+                    <TextView android:id="@+id/tv_total_missed"
+                        android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:textAppearance="?attr/textAppearanceHeadlineSmall"
+                        android:textColor="@color/missed_red"
+                        android:text="0" />
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:text="Missed ✗"
+                        android:textAppearance="?attr/textAppearanceLabelMedium" android:alpha="0.7" />
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+        </androidx.gridlayout.widget.GridLayout>
+
+        <!-- Bar chart: last 7 days -->
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            app:cardCornerRadius="16dp">
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:orientation="vertical" android:padding="16dp">
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:text="Last 7 Days"
+                    android:textAppearance="?attr/textAppearanceTitleSmall"
+                    android:layout_marginBottom="12dp" />
+                <com.github.mikephil.charting.charts.BarChart
+                    android:id="@+id/bar_chart"
+                    android:layout_width="match_parent"
+                    android:layout_height="200dp" />
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- Pie chart: overall -->
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="16dp">
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:orientation="vertical" android:padding="16dp">
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:text="Overall Compliance"
+                    android:textAppearance="?attr/textAppearanceTitleSmall"
+                    android:layout_marginBottom="12dp" />
+                <com.github.mikephil.charting.charts.PieChart
+                    android:id="@+id/pie_chart"
+                    android:layout_width="match_parent"
+                    android:layout_height="220dp" />
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+    </LinearLayout>
+
+</androidx.core.widget.NestedScrollView>

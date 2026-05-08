@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="20dp">
+
+        <!-- Category Toggle -->
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:text="Category" android:textAppearance="?attr/textAppearanceLabelLarge"
+            android:layout_marginBottom="8dp" />
+
+        <com.google.android.material.button.MaterialButtonToggleGroup
+            android:id="@+id/toggle_category"
+            android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            app:singleSelection="true" app:selectionRequired="true">
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_food" style="?attr/materialButtonOutlinedStyle"
+                android:layout_width="0dp" android:layout_height="wrap_content"
+                android:layout_weight="1" android:text="🍽️ Food" />
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_medicine" style="?attr/materialButtonOutlinedStyle"
+                android:layout_width="0dp" android:layout_height="wrap_content"
+                android:layout_weight="1" android:text="💊 Medicine" />
+        </com.google.android.material.button.MaterialButtonToggleGroup>
+
+        <!-- Title -->
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:hint="Title" style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
+            android:layout_marginBottom="16dp">
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/et_title" android:layout_width="match_parent"
+                android:layout_height="wrap_content" android:inputType="textCapSentences"
+                android:maxLines="1" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <!-- Meal Type (Food only) -->
+        <LinearLayout android:id="@+id/layout_meal_type"
+            android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:orientation="vertical" android:layout_marginBottom="16dp">
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:text="Meal Type" android:textAppearance="?attr/textAppearanceLabelLarge"
+                android:layout_marginBottom="8dp" />
+            <HorizontalScrollView android:layout_width="match_parent" android:layout_height="wrap_content">
+                <com.google.android.material.chip.ChipGroup
+                    android:id="@+id/chip_group_meal_type" android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:singleSelection="true" app:selectionRequired="true" />
+            </HorizontalScrollView>
+        </LinearLayout>
+
+        <!-- Dosage (Medicine only) -->
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/layout_dosage" android:layout_width="match_parent"
+            android:layout_height="wrap_content" android:hint="Dosage (e.g. 500mg)"
+            style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
+            android:layout_marginBottom="16dp" android:visibility="gone">
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/et_dosage" android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <!-- Notes -->
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:hint="Notes (optional)" style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
+            android:layout_marginBottom="16dp">
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/et_notes" android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textMultiLine|textCapSentences"
+                android:minLines="2" android:maxLines="4" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <!-- Time -->
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:text="Time" android:textAppearance="?attr/textAppearanceLabelLarge"
+            android:layout_marginBottom="8dp" />
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_pick_time" style="@style/Widget.Material3.Button.OutlinedButton"
+            android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp" app:icon="@drawable/ic_alarm"
+            android:text="Pick Time" />
+
+        <!-- ═══════════════════════════════════════════ -->
+        <!-- REPEAT SECTION -->
+        <!-- ═══════════════════════════════════════════ -->
+        <com.google.android.material.divider.MaterialDivider
+            android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp" />
+
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:text="🔁 Repeat" android:textAppearance="?attr/textAppearanceTitleSmall"
+            android:layout_marginBottom="4dp" />
+
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:text="Select days to repeat this entry each week"
+            android:textAppearance="?attr/textAppearanceBodySmall"
+            android:alpha="0.6" android:layout_marginBottom="12dp" />
+
+        <!-- Day-of-week chips -->
+        <com.google.android.material.chip.ChipGroup
+            android:id="@+id/chip_group_days"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            app:selectionRequired="false" />
+
+        <!-- Repeat end date (only visible when at least 1 day selected) -->
+        <LinearLayout
+            android:id="@+id/layout_repeat_end"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:text="Repeat until" android:textAppearance="?attr/textAppearanceLabelLarge"
+                android:layout_marginBottom="8dp" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_repeat_end_date"
+                style="@style/Widget.Material3.Button.OutlinedButton"
+                android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                app:icon="@drawable/ic_calendar"
+                android:text="No end date (repeat forever)" />
+
+        </LinearLayout>
+
+        <!-- Date (single, used when no repeat days selected) -->
+        <LinearLayout
+            android:id="@+id/layout_single_date"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:text="Date" android:textAppearance="?attr/textAppearanceLabelLarge"
+                android:layout_marginBottom="8dp" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_pick_date"
+                style="@style/Widget.Material3.Button.OutlinedButton"
+                android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:layout_marginBottom="20dp"
+                app:icon="@drawable/ic_calendar"
+                android:text="Today" />
+
+        </LinearLayout>
+
+        <!-- Alarm switch -->
+        <com.google.android.material.materialswitch.MaterialSwitch
+            android:id="@+id/switch_alarm"
+            android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:layout_marginBottom="24dp"
+            android:checked="true"
+            android:text="Set alarm for this entry" />
+
+        <!-- Save -->
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_save"
+            android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:text="Save Entry" android:padding="14dp" />
+
+    </LinearLayout>
+</androidx.core.widget.NestedScrollView>

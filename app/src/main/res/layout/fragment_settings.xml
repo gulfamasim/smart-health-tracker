@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp"
+        android:paddingBottom="88dp">
+
+        <!-- Appearance -->
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:text="APPEARANCE" android:textAppearance="?attr/textAppearanceLabelSmall"
+            android:alpha="0.6" android:layout_marginBottom="8dp" android:layout_marginTop="8dp" />
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp">
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:orientation="horizontal" android:padding="16dp" android:gravity="center_vertical">
+                <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content"
+                    android:layout_weight="1" android:orientation="vertical">
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:text="Dark Mode" android:textAppearance="?attr/textAppearanceTitleSmall" />
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:text="Switch between light and dark theme"
+                        android:textAppearance="?attr/textAppearanceBodySmall" android:alpha="0.6" />
+                </LinearLayout>
+                <com.google.android.material.materialswitch.MaterialSwitch
+                    android:id="@+id/switch_dark_mode"
+                    android:layout_width="wrap_content" android:layout_height="wrap_content" />
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- Backup -->
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:text="DATA &amp; BACKUP" android:textAppearance="?attr/textAppearanceLabelSmall"
+            android:alpha="0.6" android:layout_marginBottom="8dp" />
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:layout_marginBottom="12dp">
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:orientation="vertical" android:padding="16dp">
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:text="Export Backup"
+                    android:textAppearance="?attr/textAppearanceTitleSmall" />
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:text="Save all your data as a JSON file"
+                    android:textAppearance="?attr/textAppearanceBodySmall"
+                    android:alpha="0.6" android:layout_marginBottom="12dp" />
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btn_export_backup"
+                    android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:text="Export to JSON" />
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp">
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:orientation="vertical" android:padding="16dp">
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:text="Import Backup"
+                    android:textAppearance="?attr/textAppearanceTitleSmall" />
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:text="Restore data from a previously exported JSON file"
+                    android:textAppearance="?attr/textAppearanceBodySmall"
+                    android:alpha="0.6" android:layout_marginBottom="12dp" />
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btn_import_backup"
+                    style="@style/Widget.Material3.Button.OutlinedButton"
+                    android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:text="Import from JSON" />
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- Danger zone -->
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:text="DANGER ZONE" android:textAppearance="?attr/textAppearanceLabelSmall"
+            android:textColor="?attr/colorError" android:layout_marginBottom="8dp" />
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent" android:layout_height="wrap_content">
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:orientation="vertical" android:padding="16dp">
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:text="Clear All Data"
+                    android:textAppearance="?attr/textAppearanceTitleSmall"
+                    android:textColor="?attr/colorError" />
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:text="Permanently delete all entries and history (schedules kept)"
+                    android:textAppearance="?attr/textAppearanceBodySmall"
+                    android:alpha="0.6" android:layout_marginBottom="12dp" />
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btn_clear_data"
+                    style="@style/Widget.Material3.Button.OutlinedButton"
+                    android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:text="Clear All Data"
+                    app:strokeColor="?attr/colorError"
+                    android:textColor="?attr/colorError" />
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+    </LinearLayout>
+
+</androidx.core.widget.NestedScrollView>
